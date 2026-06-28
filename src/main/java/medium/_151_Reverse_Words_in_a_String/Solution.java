@@ -24,7 +24,7 @@ public class Solution {
                 i--;
                 j--;
             } else {
-                result.append(s.substring(i, j + 1));
+                result.append(s, i, j + 1);
                 i--;
                 j = i;
             }
