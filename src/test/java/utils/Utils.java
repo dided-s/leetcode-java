@@ -5,15 +5,15 @@ import java.util.Arrays;
 public class Utils {
 
     public static String assertionArraysMessage(char[] expected, char[] actual) {
-        return "\nExpected: " + Arrays.toString(expected) + "\nActual: " + Arrays.toString(actual);
+        return "\nExpected: " + Arrays.toString(expected) + "\nActual:   " + Arrays.toString(actual);
     }
 
     public static String assertionArraysMessage(int[] expected, int[] actual) {
-        return "\nExpected: " + Arrays.toString(expected) + "\nActual: " + Arrays.toString(actual);
+        return "\nExpected: " + Arrays.toString(expected) + "\nActual:   " + Arrays.toString(actual);
     }
 
     public static <T> String assertionArraysMessage(T[] expected, T[] actual) {
-        return "\nExpected: " + Arrays.toString(expected) + "\nActual: " + Arrays.toString(actual);
+        return "\nExpected: " + Arrays.toString(expected) + "\nActual:   " + Arrays.toString(actual);
     }
 
     public static int[] getIntArray(String input, String delimiter) {
