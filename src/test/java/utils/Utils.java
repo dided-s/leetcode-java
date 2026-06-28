@@ -14,6 +14,14 @@ public class Utils {
         return getIntArray(input, ",");
     }
 
+    public static char[] getCharArray(String input, String delimiter) {
+        return input.replaceAll(delimiter, "").toCharArray();
+    }
+
+    public static char[] getCharArray(String input) {
+        return getCharArray(input, ",");
+    }
+
     private Utils() {
     }
 }
