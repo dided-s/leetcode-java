@@ -5,8 +5,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import utils.Utils;
 
-import java.util.Arrays;
-
 public class SolutionTest {
 
     @ParameterizedTest
@@ -18,6 +16,6 @@ public class SolutionTest {
         var actual = new Solution().productExceptSelf(nums);
 
         Assertions.assertArrayEquals(expected, actual,
-                String.format("expected: %s\nactual: %s", Arrays.toString(expected), Arrays.toString(actual)));
+                Utils.assertionArraysMessage(expected, actual));
     }
 }

@@ -21,8 +21,7 @@ public class SolutionTest {
         Assertions.assertAll(
                 () -> Assertions.assertEquals(expected, actual),
                 () -> Assertions.assertArrayEquals(expectedChars, actualChars,
-                        String.format("\nExpected: %s\nActual: %s",
-                                Arrays.toString(expectedChars), Arrays.toString(actualChars)))
+                        Utils.assertionArraysMessage(expectedChars, actualChars))
         );
     }
 }
