@@ -20,15 +20,16 @@ public class Utils {
     }
 
     public static int[] getIntArray(String input, String delimiter) {
+        if (input == null || input.isEmpty()) {
+            return new int[0];
+        }
         return Arrays.stream(input.split(delimiter))
                 .mapToInt(Integer::parseInt)
                 .toArray();
     }
 
     public static int[] getIntArray(String input, char delimiter) {
-        return Arrays.stream(input.split(String.valueOf(delimiter)))
-                .mapToInt(Integer::parseInt)
-                .toArray();
+        return getIntArray(input, String.valueOf(delimiter));
     }
 
     public static int[] getIntArray(String input) {
