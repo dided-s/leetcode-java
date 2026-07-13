@@ -32,7 +32,7 @@ public class Solution {
             } else if (c == ']') {
                 int num = numStack.pop();
                 StringBuilder lastString = stringStack.pop();
-                lastString = lastString.repeat(lastString.toString(), num - 1);
+                lastString.repeat(lastString.toString(), num - 1);
                 if (stringStack.isEmpty()) {
                     stringStack.push(lastString);
                 } else {
