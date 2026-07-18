@@ -1,4 +1,4 @@
-package medium._498_Diagonal_Traverse;
+package medium._0498_Diagonal_Traverse;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
