@@ -3,82 +3,52 @@ package medium._498_Diagonal_Traverse;
 import annotations.Explore;
 import annotations.Medium;
 
+import java.util.*;
+
 @Medium
 @Explore("Array and String")
 public class Solution {
+
     public int[] findDiagonalOrder(int[][] mat) {
         if (mat == null || mat.length == 0 || mat[0].length == 0) {
             return new int[0];
         }
 
-        int diagonalCount = diagonalCount(mat);
-        int[] result = new int[matCount(mat)];
-        int resultIndex = 0;
+        Map<Integer, Deque<Integer>> groups = new HashMap<>();
 
-        for (int diagonal = 0; diagonal < diagonalCount; diagonal++) {
+        int n = 0;
+        for (int row = mat.length - 1; row >= 0; row--) {
+            for (int col = 0; col < mat[row].length; col++) {
+                int diagonal = row + col;
+                if (!groups.containsKey(diagonal)) {
+                    groups.put(diagonal, new ArrayDeque<>());
+                }
+
+                groups.get(diagonal).add(mat[row][col]);
+                n++;
+            }
+        }
+
+        int[] ans = new int[n];
+        int i = 0;
+        int diagonal = 0;
+
+        while (groups.containsKey(diagonal)) {
             if (diagonal % 2 == 0) {
-                int i = diagonal;
-                int j = 0;
-
-                while (i >= mat.length) {
-                    i--;
-                    j++;
-                }
-
-                while (j >= mat[i].length) {
-                    i--;
-                    j++;
-                }
-
-                while (i >= 0) {
-                    if (j < mat[i].length) {
-                        result[resultIndex++] = mat[i][j];
-                    }
-                    i--;
-                    j++;
+                for (Iterator<Integer> it = groups.get(diagonal).iterator(); it.hasNext(); ) {
+                    int num = it.next();
+                    ans[i++] = num;
                 }
             } else {
-                int i = 0;
-                int j = diagonal;
-
-                while (i < mat.length && j >= mat[i].length) {
-                    i++;
-                    j--;
-                }
-
-                while (i < mat.length) {
-                    if (j < 0) break;
-                    if (j < mat[i].length) {
-                        result[resultIndex++] = mat[i][j];
-                    }
-                    i++;
-                    j--;
+                for (Iterator<Integer> it = groups.get(diagonal).descendingIterator(); it.hasNext(); ) {
+                    int num = it.next();
+                    ans[i++] = num;
                 }
             }
+
+            diagonal++;
         }
 
-        return result;
-    }
-
-    private int diagonalCount(int[][] mat) {
-        int max = 0;
-
-        for (int i = 0; i < mat.length; i++) {
-            int currentSum = i + mat[i].length - 1;
-            if (currentSum > max) {
-                max = currentSum;
-            }
-        }
-
-        return max + 1;
-    }
-
-    private int matCount(int[][] mat) {
-        int sum = 0;
-        for (int i = 0; i < mat.length; i++) {
-            sum += mat[i].length;
-        }
-
-        return sum;
+        return ans;
     }
 }
