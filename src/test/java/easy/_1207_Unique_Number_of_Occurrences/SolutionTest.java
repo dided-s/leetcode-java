@@ -9,7 +9,7 @@ public class SolutionTest {
 
     @ParameterizedTest
     @CsvFileSource(resources = "/easy/_1207_Unique_Number_of_Occurrences/data.csv", delimiter = ' ')
-    void testArguments(String input, boolean expected) {
+    void testCsv(String input, boolean expected) {
         int[] arr = Utils.getIntArray(input);
         boolean actual = new Solution().uniqueOccurrences(arr);
 

@@ -1,11 +1,14 @@
 package easy._0283_Move_Zeroes;
 
 import annotations.Easy;
+import annotations.Explore;
 import annotations.LeetCode75;
 
 @Easy
 @LeetCode75("Two Pointers")
+@Explore("Arrays 101")
 public class Solution2 {
+
     public void moveZeroes(int[] nums) {
         int lag = 0;
         int index = 0;
