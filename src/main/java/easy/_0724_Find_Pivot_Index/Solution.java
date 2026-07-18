@@ -1,10 +1,12 @@
 package easy._0724_Find_Pivot_Index;
 
 import annotations.Easy;
+import annotations.Explore;
 import annotations.LeetCode75;
 
 @Easy
 @LeetCode75("Prefix Sum")
+@Explore("Arrays 101")
 public class Solution {
 
     public int pivotIndex(int[] nums) {
