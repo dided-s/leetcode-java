@@ -1,10 +1,12 @@
 package medium._0151_Reverse_Words_in_a_String;
 
+import annotations.Explore;
 import annotations.LeetCode75;
 import annotations.Medium;
 
 @Medium
 @LeetCode75("Array / String")
+@Explore("Array and String")
 public class Solution3 {
 
     public String reverseWords(String s) {

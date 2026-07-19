@@ -7,7 +7,7 @@ import annotations.Medium;
 @Medium
 @LeetCode75("Array / String")
 @Explore("Array and String")
-public class Solution {
+public class Solution4 {
 
     public String reverseWords(String s) {
         if (s == null) throw new IllegalArgumentException();
@@ -20,12 +20,9 @@ public class Solution {
         int endIndex = s.length() - 1;
 
         while (startIndex >= 0 && endIndex >= 0) {
-
-            while (startIndex > 0 && s.charAt(startIndex) != ' ') {
+            if (s.charAt(startIndex) != ' ') {
                 startIndex--;
-            }
-
-            if (startIndex == endIndex) {
+            } else if (startIndex == endIndex) {
                 startIndex--;
                 endIndex--;
             } else {
