@@ -6,7 +6,7 @@ import annotations.LeetCode75;
 
 @Easy
 @LeetCode75("Two Pointers")
-@Explore("Arrays 101")
+@Explore("Arrays 101 | Array and String")
 public class Solution {
 
     public void moveZeroes(int[] nums) {
