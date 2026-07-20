@@ -1,4 +1,4 @@
-package medium._0019_Remove_Nth_Node_From_of_List;
+package medium._0328_Odd_Even_Linked_List;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -14,10 +14,10 @@ public class SolutionTest {
 
     @ParameterizedTest
     @MethodSource("arguments")
-    void testArguments(List<Integer> list, int n, List<Integer> expected) {
+    void testArguments(List<Integer> list, List<Integer> expected) {
         ListNode head = LinkedListUtils.toListNode(list);
 
-        head = new Solution().removeNthFromEnd(head, n);
+        head = new Solution().oddEvenList(head);
 
         List<Integer> actual = LinkedListUtils.toList(head);
         Assertions.assertEquals(expected, actual);
@@ -26,10 +26,8 @@ public class SolutionTest {
     static Stream<Arguments> arguments() {
 
         return Stream.of(
-                Arguments.of(List.of(1, 2, 3, 4, 5), 2, List.of(1, 2, 3, 5)),
-                Arguments.of(List.of(1), 1, List.of()),
-                Arguments.of(List.of(1, 2), 1, List.of(1)),
-                Arguments.of(List.of(1, 2), 2, List.of(2))
+                Arguments.of(List.of(1, 2, 3, 4, 5), List.of(1, 3, 5, 2, 4)),
+                Arguments.of(List.of(2, 1, 3, 5, 6, 4, 7), List.of(2, 3, 6, 7, 1, 5, 4))
         );
     }
 }
