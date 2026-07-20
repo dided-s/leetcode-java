@@ -1,4 +1,4 @@
-package medium._0019_Remove_Nth_Node_From_of_List;
+package easy._0234_Palindrome_Linked_List;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -14,22 +14,23 @@ public class SolutionTest {
 
     @ParameterizedTest
     @MethodSource("arguments")
-    void testArguments(List<Integer> list, int n, List<Integer> expected) {
+    void testArguments(List<Integer> list, boolean expected) {
         ListNode head = LinkedListUtils.toLinkedListNode(list);
 
-        head = new Solution().removeNthFromEnd(head, n);
+        boolean actual = new Solution().isPalindrome(head);
 
-        List<Integer> actual = LinkedListUtils.toList(head);
         Assertions.assertEquals(expected, actual);
     }
 
     static Stream<Arguments> arguments() {
 
         return Stream.of(
-                Arguments.of(List.of(1, 2, 3, 4, 5), 2, List.of(1, 2, 3, 5)),
-                Arguments.of(List.of(1), 1, List.of()),
-                Arguments.of(List.of(1, 2), 1, List.of(1)),
-                Arguments.of(List.of(1, 2), 2, List.of(2))
+                Arguments.of(List.of(1, 2, 2, 1), true),
+                Arguments.of(List.of(1, 2, 3, 2, 1), true),
+                Arguments.of(List.of(1, 2, 3, 2, 2), false),
+                Arguments.of(List.of(1, 2, 3, 3, 2, 2), false),
+                Arguments.of(List.of(1, 2, 1), true),
+                Arguments.of(List.of(1, 2), false)
         );
     }
 }

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class LinkedListUtils {
 
-    public static ListNode toListNode(List<Integer> list) {
+    public static ListNode toLinkedListNode(List<Integer> list) {
         ListNode head = new ListNode(list.get(0));
 
         ListNode current = head;
