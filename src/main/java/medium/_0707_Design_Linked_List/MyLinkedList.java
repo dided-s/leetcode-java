@@ -1,5 +1,10 @@
 package medium._0707_Design_Linked_List;
 
+import annotations.Explore;
+import annotations.Medium;
+
+@Medium
+@Explore("Linked List")
 public class MyLinkedList {
 
     private Node head;
