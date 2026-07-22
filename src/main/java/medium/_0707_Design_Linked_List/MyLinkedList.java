@@ -8,80 +8,92 @@ import annotations.Medium;
 public class MyLinkedList {
 
     private Node head;
+    private Node tail;
+    private int size;
 
     public MyLinkedList() {
     }
 
     public int get(int index) {
-        int j = 0;
-        Node current = head;
+        if (index < 0 || index >= size)
+            return -1;
 
-        while (current != null) {
-            if (j == index) {
-                return current.val;
-            }
-            current = current.next;
-            j++;
+        return getNodeAtIndex(index).val;
+    }
+
+    private Node getNodeAtIndex(int index) {
+        if (index < 0 || index >= size)
+            return null;
+
+        Node pointer = head;
+        for (int i = 0; i < index; i++) {
+            pointer = pointer.next;
         }
-
-        return -1;
+        return pointer;
     }
 
     public void addAtHead(int val) {
         Node newHead = new Node(val);
         newHead.next = head;
+        if (head != null) head.prev = newHead;
+
         head = newHead;
+        if (size == 0)
+            tail = head;
+        size++;
     }
 
     public void addAtTail(int val) {
-        Node current = head;
+        if (size == 0)
+            addAtHead(val);
+        else {
+            Node newTail = new Node(val);
+            newTail.prev = tail;
 
-        if (current == null) {
-            head = new Node(val);
-            return;
+            tail.next = newTail;
+            tail = tail.next;
+            size++;
         }
-
-        while (current.next != null) {
-            current = current.next;
-        }
-
-        current.next = new Node(val);
     }
 
     public void addAtIndex(int index, int val) {
-        if (index == 0) addAtHead(val);
-        int j = 0;
+        if (index < 0 || index > size) {
+            return;
+        } else if (index == 0) {
+            addAtHead(val);
+        } else if (index == size) {
+            addAtTail(val);
+        } else {
+            Node newNode = new Node(val);
+            Node prevNode = getNodeAtIndex(index - 1);
 
-        Node current = head;
-        Node newIndexNode = new Node(val);
+            newNode.next = prevNode.next;
+            if (prevNode.next != null) prevNode.next.prev = newNode;
+            newNode.prev = prevNode;
 
-        while (current != null) {
-            if (j == index - 1) {
-                newIndexNode.next = current.next;
-                current.next = newIndexNode;
-                return;
-            }
-            current = current.next;
-            j++;
+            prevNode.next = newNode;
+            size++;
         }
     }
 
     public void deleteAtIndex(int index) {
-        if (index < 0) return;
-        if (index == 0) head = head.next;
-
-        int j = -1;
-        Node current = new Node(-1);
-        current.next = head;
-
-        while (current.next != null) {
-            if (j == index - 1) {
-                current.next = current.next.next;
-                return;
-            }
-            current = current.next;
-            j++;
+        if (index < 0 || index >= size) {
+            return;
+        } else if (size == 1) {
+            head = null;
+            tail = null;
+        } else if (index == 0) {
+            if (head.next != null) head.next.prev = head;
+            head = head.next;
+        } else if (index == size - 1) {
+            Node prevNode = getNodeAtIndex(index - 1);
+            prevNode.next = null;
+            tail = prevNode;
+        } else {
+            Node previousNode = getNodeAtIndex(index - 1);
+            previousNode.next = previousNode.next.next;
         }
+        size--;
     }
 
     public void print() {
@@ -89,6 +101,7 @@ public class MyLinkedList {
 
         int i = 0;
 
+        System.out.println("size: " + size);
         while (current != null) {
             System.out.println(i++ + ": " + current.val);
             current = current.next;
@@ -98,22 +111,10 @@ public class MyLinkedList {
     public static class Node {
         int val;
         Node next;
+        Node prev;
 
         public Node(int val) {
             this.val = val;
-        }
-
-        public Node(int val, Node next) {
-            this.val = val;
-            this.next = next;
-        }
-
-        public int getVal() {
-            return val;
-        }
-
-        public Node getNext() {
-            return next;
         }
     }
 }
