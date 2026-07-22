@@ -1,11 +1,11 @@
 package easy._0234_Palindrome_Linked_List;
 
+import annotations.Easy;
 import annotations.Explore;
-import annotations.Medium;
 import utils.LinkedListUtils;
 import utils.ListNode;
 
-@Medium
+@Easy
 @Explore("Linked List")
 public class Solution2 {
 
