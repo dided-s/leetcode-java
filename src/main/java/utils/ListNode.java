@@ -1,8 +1,8 @@
 package utils;
 
-public class ListNode {
+public class ListNode<T extends ListNode<T>> {
     public int val;
-    public ListNode next;
+    public T next;
 
     public ListNode() {
     }
@@ -11,7 +11,7 @@ public class ListNode {
         this.val = val;
     }
 
-    public ListNode(int val, ListNode next) {
+    public ListNode(int val, T next) {
         this.val = val;
         this.next = next;
     }
@@ -19,5 +19,21 @@ public class ListNode {
     @Override
     public String toString() {
         return String.valueOf(val);
+    }
+
+    public int getVal() {
+        return val;
+    }
+
+    public T getNext() {
+        return next;
+    }
+
+    public void setVal(int val) {
+        this.val = val;
+    }
+
+    public void setNext(T next) {
+        this.next = next;
     }
 }

@@ -3,6 +3,7 @@ package utils;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("rawtypes")
 public class LinkedListUtils {
 
     public static ListNode toLinkedListNode(List<Integer> list) {
@@ -12,8 +13,8 @@ public class LinkedListUtils {
 
         ListNode current = head;
         for (int i = 1; i < list.size(); i++) {
-            current.next = new ListNode(list.get(i));
-            current = current.next;
+            current.setNext(new ListNode(list.get(i)));
+            current = current.getNext();
         }
 
         return head;
@@ -23,8 +24,8 @@ public class LinkedListUtils {
         List<Integer> list = new ArrayList<>();
 
         while (head != null) {
-            list.add(head.val);
-            head = head.next;
+            list.add(head.getVal());
+            head = head.getNext();
         }
 
         return list;
