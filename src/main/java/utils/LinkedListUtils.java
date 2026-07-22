@@ -6,6 +6,8 @@ import java.util.List;
 public class LinkedListUtils {
 
     public static ListNode toLinkedListNode(List<Integer> list) {
+        if (list == null || list.size() == 0) return null;
+
         ListNode head = new ListNode(list.get(0));
 
         ListNode current = head;
