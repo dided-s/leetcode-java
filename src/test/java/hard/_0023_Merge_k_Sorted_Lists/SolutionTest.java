@@ -15,7 +15,7 @@ public class SolutionTest {
     @ParameterizedTest
     @MethodSource("arguments")
     void testArguments(List<List<Integer>> ls, List<Integer> expected) {
-        ListNode[] lists = ls.stream().map(LinkedListUtils::toLinkedListNode).toArray(ListNode[]::new);
+        ListNode[] lists = ls.stream().map(LinkedListUtils::toListNode).toArray(ListNode[]::new);
 
         ListNode head = new Solution().mergeKLists(lists);
         List<Integer> actual = LinkedListUtils.toList(head);

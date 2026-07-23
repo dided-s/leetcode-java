@@ -15,8 +15,8 @@ public class SolutionTest {
     @ParameterizedTest
     @MethodSource("arguments")
     void testArguments(List<Integer> list1, List<Integer> list2, List<Integer> expected) {
-        ListNode head1 = LinkedListUtils.toLinkedListNode(list1);
-        ListNode head2 = LinkedListUtils.toLinkedListNode(list2);
+        ListNode head1 = LinkedListUtils.toListNode(list1);
+        ListNode head2 = LinkedListUtils.toListNode(list2);
 
         ListNode mergeNode = new Solution().mergeTwoLists(head1, head2);
         List<Integer> actual = LinkedListUtils.toList(mergeNode);

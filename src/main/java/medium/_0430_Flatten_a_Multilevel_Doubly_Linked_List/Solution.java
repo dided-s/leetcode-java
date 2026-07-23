@@ -2,7 +2,7 @@ package medium._0430_Flatten_a_Multilevel_Doubly_Linked_List;
 
 import annotations.Explore;
 import annotations.Medium;
-import utils.ListNode;
+import utils.GeneralNode;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -38,7 +38,7 @@ public class Solution {
     }
 }
 
-class Node extends ListNode<Node> {
+class Node extends GeneralNode<Node> {
     public Node(int val) {
         this.val = val;
     }

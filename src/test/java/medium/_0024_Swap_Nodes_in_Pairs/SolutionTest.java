@@ -15,7 +15,7 @@ public class SolutionTest {
     @ParameterizedTest
     @MethodSource("arguments")
     void testArguments(List<Integer> list, List<Integer> expected) {
-        ListNode head = LinkedListUtils.toLinkedListNode(list);
+        ListNode head = LinkedListUtils.toListNode(list);
 
         ListNode swapPairs = new Solution().swapPairs(head);
         List<Integer> actual = LinkedListUtils.toList(swapPairs);

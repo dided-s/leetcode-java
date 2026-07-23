@@ -5,7 +5,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import utils.LinkedListUtils;
-import utils.ListNode;
 
 import java.util.List;
 import java.util.stream.Stream;
@@ -15,7 +14,7 @@ public class SolutionTest {
     @ParameterizedTest
     @MethodSource("arguments")
     void testArguments(Node head, List<Integer> expected) {
-        ListNode flatten = new Solution().flatten(head);
+        Node flatten = new Solution().flatten(head);
 
         List<Integer> actual = LinkedListUtils.toList(flatten);
 

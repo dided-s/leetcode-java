@@ -15,7 +15,7 @@ public class SolutionTest {
     @ParameterizedTest
     @MethodSource("arguments")
     void testArguments(List<Integer> list, boolean expected) {
-        ListNode head = LinkedListUtils.toLinkedListNode(list);
+        ListNode head = LinkedListUtils.toListNode(list);
 
         boolean actual = new Solution().isPalindrome(head);
 

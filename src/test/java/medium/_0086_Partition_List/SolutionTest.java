@@ -15,7 +15,7 @@ public class SolutionTest {
     @ParameterizedTest
     @MethodSource("arguments")
     void testArguments(List<Integer> list, int k, List<Integer> expected) {
-        ListNode head = LinkedListUtils.toLinkedListNode(list);
+        ListNode head = LinkedListUtils.toListNode(list);
 
         ListNode partition = new Solution().partition(head, k);
         List<Integer> actual = LinkedListUtils.toList(partition);

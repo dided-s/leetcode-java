@@ -3,10 +3,9 @@ package utils;
 import java.util.ArrayList;
 import java.util.List;
 
-@SuppressWarnings("rawtypes")
 public class LinkedListUtils {
 
-    public static ListNode toLinkedListNode(List<Integer> list) {
+    public static ListNode toListNode(List<Integer> list) {
         if (list == null || list.size() == 0) return null;
 
         ListNode head = new ListNode(list.get(0));
@@ -20,7 +19,7 @@ public class LinkedListUtils {
         return head;
     }
 
-    public static List<Integer> toList(ListNode head) {
+    public static <T extends GeneralNode<T>> List<Integer> toList(T head) {
         List<Integer> list = new ArrayList<>();
 
         while (head != null) {

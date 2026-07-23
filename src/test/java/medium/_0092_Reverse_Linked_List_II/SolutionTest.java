@@ -15,7 +15,7 @@ public class SolutionTest {
     @ParameterizedTest
     @MethodSource("arguments")
     void testArguments(List<Integer> list, int leftNumber, int rightNumber, List<Integer> expected) {
-        ListNode head = LinkedListUtils.toLinkedListNode(list);
+        ListNode head = LinkedListUtils.toListNode(list);
         ListNode newHead = new Solution().reverseBetween(head, leftNumber, rightNumber);
 
         List<Integer> actual = LinkedListUtils.toList(newHead);
