@@ -37,4 +37,18 @@ public class GeneralNode<T extends GeneralNode<T>> {
     public void setNext(T next) {
         this.next = next;
     }
+
+    public void print() {
+        GeneralNode<T> node = this;
+
+        while (node != null) {
+            System.out.println(node.val);
+            node = node.next;
+        }
+    }
+
+    public void print(String message) {
+        System.out.println(message);
+        print();
+    }
 }
