@@ -29,6 +29,18 @@ public class SolutionTest {
                         new int[]{3, 4},
                         2.50000),
                 Arguments.of(
+                        new int[]{1, 2},
+                        new int[]{2, 3, 4},
+                        2.00000),
+                Arguments.of(
+                        new int[]{1, 1},
+                        new int[]{2, 3, 4},
+                        2.00000),
+                Arguments.of(
+                        new int[]{1},
+                        new int[]{2, 3, 4},
+                        2.50000),
+                Arguments.of(
                         new int[]{1, 3, 6, 8, 12, 14, 19, 22},
                         new int[]{1, 7, 15, 21, 22, 23, 24, 25, 26, 27, 28},
                         19.00000
