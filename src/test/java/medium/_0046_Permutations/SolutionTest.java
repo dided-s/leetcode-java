@@ -45,6 +45,30 @@ public class SolutionTest {
                         Set.of(
                                 List.of(1)
                         )
+                ),
+                Arguments.of(
+                        new int[]{1, 1, 1, 2},
+                        Set.of(
+                                List.of(1, 1, 1, 2),
+                                List.of(1, 1, 2, 1),
+                                List.of(1, 2, 1, 1),
+                                List.of(2, 1, 1, 1)
+                        )
+                ),
+                Arguments.of(
+                        new int[]{1, 1, 1, 2, 2},
+                        Set.of(
+                                List.of(1, 1, 1, 2, 2), // 1, 2, 4, 11
+                                List.of(1, 1, 2, 1, 2), // 3, 5, 6, 14
+                                List.of(1, 1, 2, 2, 1), // 8, 11
+                                List.of(1, 2, 1, 1, 2), // 7, 10
+                                List.of(1, 2, 1, 2, 1), // 12, 19
+                                List.of(1, 2, 2, 1, 1), // 9, 13
+                                List.of(2, 1, 1, 1, 2), // 7
+                                List.of(2, 1, 1, 2, 1), // 8
+                                List.of(2, 1, 2, 1, 1), // 9
+                                List.of(2, 2, 1, 1, 1) // 10
+                        )
                 )
         );
     }
