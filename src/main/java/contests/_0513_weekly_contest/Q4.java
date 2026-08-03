@@ -1,8 +1,8 @@
 package contests._0513_weekly_contest;
 
-import annotations.Medium;
+import annotations.Hard;
 
-@Medium
+@Hard
 public class Q4 {
 
     // Q4. Count Subarrays With Even Odd Ratio I
