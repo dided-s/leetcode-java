@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Easy
-@Explore("Recursion")
+@Explore("Recursion I")
 public class Solution {
 
     public List<Integer> getRow(int rowIndex) {

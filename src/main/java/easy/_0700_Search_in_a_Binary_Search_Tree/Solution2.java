@@ -9,7 +9,7 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 
 @Easy
-@Explore("Recursion")
+@Explore("Recursion I")
 @Topic("Tree")
 public class Solution2 {
 

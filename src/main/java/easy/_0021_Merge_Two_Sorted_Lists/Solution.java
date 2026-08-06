@@ -5,36 +5,19 @@ import annotations.Explore;
 import utils.ListNode;
 
 @Easy
-@Explore("Linked List")
+@Explore("Linked List | Recursion I")
 public class Solution {
 
     public ListNode mergeTwoLists(ListNode head1, ListNode head2) {
         if (head1 == null) return head2;
         if (head2 == null) return head1;
 
-        ListNode head = new ListNode(-1);
-        ListNode current = head;
-
-
-        while (head1 != null && head2 != null) {
-            if (head1.val < head2.val) {
-                current.next = head1;
-                head1 = head1.next;
-            } else {
-                current.next = head2;
-                head2 = head2.next;
-            }
-            current = current.next;
+        if (head1.val < head2.val) {
+            head1.next = mergeTwoLists(head1.next, head2);
+            return head1;
+        } else {
+            head2.next = mergeTwoLists(head1, head2.next);
+            return head2;
         }
-
-        if (head1 != null) {
-            current.next = head1;
-        }
-
-        if (head2 != null) {
-            current.next = head2;
-        }
-
-        return head.next;
     }
 }

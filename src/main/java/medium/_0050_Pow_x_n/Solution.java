@@ -4,7 +4,7 @@ import annotations.Explore;
 import annotations.Medium;
 
 @Medium
-@Explore("Recursion")
+@Explore("Recursion I")
 public class Solution {
 
     public double myPow(double x, int n) {

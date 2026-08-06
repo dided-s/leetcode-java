@@ -6,7 +6,7 @@ import annotations.Topic;
 import utils.TreeNode;
 
 @Easy
-@Explore("Recursion")
+@Explore("Recursion I")
 @Topic("Tree")
 public class Solution {
 
