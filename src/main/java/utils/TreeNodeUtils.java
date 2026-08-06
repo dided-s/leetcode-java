@@ -8,26 +8,30 @@ import java.util.Queue;
 public class TreeNodeUtils {
 
     public static TreeNode toTreeNode(List<Integer> list) {
-        if (list == null || list.size() == 0 || list.get(0) == null) {
+        return toTreeNode(list.toArray(new Integer[list.size()]));
+    }
+
+    public static TreeNode toTreeNode(Integer[] array) {
+        if (array == null || array.length == 0 || array[0] == null) {
             return null;
         }
 
-        TreeNode root = new TreeNode(list.get(0));
+        TreeNode root = new TreeNode(array[0]);
         Queue<TreeNode> queue = new ArrayDeque<>();
         queue.offer(root);
 
         int i = 1;
-        while (!queue.isEmpty() && i < list.size()) {
+        while (!queue.isEmpty() && i < array.length) {
             TreeNode node = queue.poll();
 
-            if (i < list.size() && list.get(i) != null) {
-                node.left = new TreeNode(list.get(i));
+            if (i < array.length && array[i] != null) {
+                node.left = new TreeNode(array[i]);
                 queue.offer(node.left);
             }
             i++;
 
-            if (i < list.size() && list.get(i) != null) {
-                node.right = new TreeNode(list.get(i));
+            if (i < array.length && array[i] != null) {
+                node.right = new TreeNode(array[i]);
                 queue.offer(node.right);
             }
             i++;

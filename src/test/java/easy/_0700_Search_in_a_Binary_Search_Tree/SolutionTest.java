@@ -7,6 +7,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import utils.TreeNode;
 import utils.TreeNodeUtils;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -24,8 +25,9 @@ public class SolutionTest {
     static Stream<Arguments> arguments() {
 
         return Stream.of(
-                Arguments.of(List.of(4, 2, 7, 1, 3), 2, List.of(2, 1, 3)),
-                Arguments.of(List.of(4, 2, 7, 1, 3), 5, List.of())
+                Arguments.of(Arrays.asList(4, 2, 7, 1, 3), 2, List.of(2, 1, 3)),
+                Arguments.of(Arrays.asList(4, 2, 7, 1, 3), 5, List.of()),
+                Arguments.of(Arrays.asList(4, 2, 7, 1, 3, null), 5, List.of())
         );
     }
 }
