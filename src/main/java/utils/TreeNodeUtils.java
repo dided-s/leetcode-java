@@ -1,9 +1,6 @@
 package utils;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class TreeNodeUtils {
 
@@ -45,20 +42,25 @@ public class TreeNodeUtils {
 
         List<Integer> list = new ArrayList<>();
 
-        Queue<TreeNode> queue = new ArrayDeque<>();
-        queue.offer(root);
+        Queue<Optional<TreeNode>> queue = new ArrayDeque<>();
+        queue.offer(Optional.ofNullable(root));
 
         while (!queue.isEmpty()) {
-            TreeNode node = queue.poll();
+            TreeNode node = queue.poll().orElse(null);
 
-            list.add(node.val);
-            if (node.left != null) {
-                queue.offer(node.left);
+            if (node != null) {
+                list.add(node.val);
+            } else {
+                list.add(null);
+                continue;
             }
 
-            if (node.right != null) {
-                queue.offer(node.right);
-            }
+            queue.offer(Optional.ofNullable(node.left));
+            queue.offer(Optional.ofNullable(node.right));
+        }
+
+        while (list.getLast() == null) {
+            list.removeLast();
         }
 
         return list;
