@@ -1,4 +1,4 @@
-package easy._0144_Binary_Tree_Preorder_Traversal;
+package easy._0094_Binary_Tree_Inorder_Traversal;
 
 import annotations.Easy;
 import annotations.Explore;
@@ -13,20 +13,21 @@ import java.util.List;
 @Topic("Recursion")
 public class Solution2 {
 
-    public List<Integer> preorderTraversal(TreeNode root) {
+    public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<>();
-        preorderTraversal(root, result);
+
+        inorderTraversal(root, result);
 
         return result;
     }
 
-    public void preorderTraversal(TreeNode root, List<Integer> result) {
+    public void inorderTraversal(TreeNode root, List<Integer> result) {
         if (root == null) {
             return;
         }
 
+        inorderTraversal(root.left, result);
         result.add(root.val);
-        preorderTraversal(root.left, result);
-        preorderTraversal(root.right, result);
+        inorderTraversal(root.right, result);
     }
 }
