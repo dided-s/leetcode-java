@@ -1,13 +1,13 @@
-package easy._0102_Binary_Tree_Level_Order_Traversal;
+package medium._0102_Binary_Tree_Level_Order_Traversal;
 
-import annotations.Easy;
+import annotations.Medium;
 import annotations.Topic;
 import utils.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Easy
+@Medium
 @Topic("Tree | Recursion")
 public class Solution {
 

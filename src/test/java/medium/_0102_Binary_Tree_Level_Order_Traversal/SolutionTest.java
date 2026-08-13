@@ -1,4 +1,4 @@
-package easy._0102_Binary_Tree_Level_Order_Traversal;
+package medium._0102_Binary_Tree_Level_Order_Traversal;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
