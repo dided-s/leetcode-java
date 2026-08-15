@@ -27,8 +27,6 @@ public class Solution {
                 max = right - left + 1;
             }
 
-            System.out.println("left: " + left + ", right: " + right + ", max: " + max);
-
             right++;
         }
 
