@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Medium
-@Topic("Tree | Solution")
+@Topic("Tree | Recursion")
 public class Solution {
 
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
