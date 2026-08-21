@@ -7,6 +7,14 @@ import java.util.stream.Collectors;
 
 public class Utils {
 
+    public static void main(String[] args) {
+        String stringWithSquareBrackets = "[[4,3],[1,4],[4,6],[1,7]]";
+        String stringWithCurlyBrackets = stringWithSquareBrackets.replaceAll("\\[", "{")
+                .replaceAll("]", "}");
+
+        System.out.println(stringWithCurlyBrackets);
+    }
+
     public static String assertionArraysMessage(char[] expected, char[] actual) {
         return "\nExpected: " + Arrays.toString(expected) + "\nActual:   " + Arrays.toString(actual);
     }
