@@ -9,10 +9,15 @@ public class Utils {
 
     public static void main(String[] args) {
         String stringWithSquareBrackets = "[[4,3],[1,4],[4,6],[1,7]]";
-        String stringWithCurlyBrackets = stringWithSquareBrackets.replaceAll("\\[", "{")
-                .replaceAll("]", "}");
+        System.out.println(makeFigureBrackets(stringWithSquareBrackets));
 
-        System.out.println(stringWithCurlyBrackets);
+        String taskName = "How Many Numbers Are Smaller Than the Current Number";
+        System.out.println(String.join("_", taskName.split(" ")));
+    }
+
+    public static String makeFigureBrackets(String stringWithSquareBrackets) {
+        return stringWithSquareBrackets.replaceAll("\\[", "{")
+                .replaceAll("]", "}");
     }
 
     public static String assertionArraysMessage(char[] expected, char[] actual) {
