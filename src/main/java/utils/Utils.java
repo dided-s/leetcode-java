@@ -11,13 +11,17 @@ public class Utils {
         String stringWithSquareBrackets = "[[4,3],[1,4],[4,6],[1,7]]";
         System.out.println(makeFigureBrackets(stringWithSquareBrackets));
 
-        String taskName = "How Many Numbers Are Smaller Than the Current Number";
+        String taskName = "Longest Palindromic Substring";
         System.out.println(String.join("_", taskName.split(" ")));
     }
 
     public static String makeFigureBrackets(String stringWithSquareBrackets) {
         return stringWithSquareBrackets.replaceAll("\\[", "{")
                 .replaceAll("]", "}");
+    }
+
+    public static <T> String assertionSetContainsMessage(Set<T> expected, T actual) {
+        return "\nExpected set: " + expected.toString() + "\nActual:   " + actual.toString();
     }
 
     public static String assertionArraysMessage(char[] expected, char[] actual) {
