@@ -8,16 +8,23 @@ import java.util.stream.Collectors;
 public class Utils {
 
     public static void main(String[] args) {
-        String stringWithSquareBrackets = "[[4,3],[1,4],[4,6],[1,7]]";
+        String stringWithSquareBrackets = "[[0,0,0],[0,1,1],[0,0,1]]";
         System.out.println(makeFigureBrackets(stringWithSquareBrackets));
 
-        String taskName = "Longest Palindromic Substring";
-        System.out.println(String.join("_", taskName.split(" ")));
+        System.out.println(makeListOf(stringWithSquareBrackets));
+
+        String taskName = "Maximum Number of Non-overlapping Palindrome Substrings";
+        System.out.println(String.join("_", taskName.split("[ /-]")));
     }
 
     public static String makeFigureBrackets(String stringWithSquareBrackets) {
         return stringWithSquareBrackets.replaceAll("\\[", "{")
                 .replaceAll("]", "}");
+    }
+
+    public static String makeListOf(String stringWithSquareBrackets) {
+        return stringWithSquareBrackets.replaceAll("\\[", "List.of(")
+                .replaceAll("]", ")");
     }
 
     public static <T> String assertionSetContainsMessage(Set<T> expected, T actual) {
