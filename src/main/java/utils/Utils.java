@@ -8,12 +8,15 @@ import java.util.stream.Collectors;
 public class Utils {
 
     public static void main(String[] args) {
-        String stringWithSquareBrackets = "[[0,0,0],[0,1,1],[0,0,1]]";
+        String stringWithSquareBrackets = """
+                        [["a","yes"]]
+                        """;
         System.out.println(makeFigureBrackets(stringWithSquareBrackets));
 
         System.out.println(makeListOf(stringWithSquareBrackets));
 
-        String taskName = "Maximum Number of Non-overlapping Palindrome Substrings";
+        String taskName = "Reverse Substrings Between Each Pair of Parentheses";
+        System.out.println('b' - 'a');
         System.out.println(String.join("_", taskName.split("[ /-]")));
     }
 
