@@ -15,7 +15,7 @@ public class Utils {
 
         System.out.println(makeListOf(stringWithSquareBrackets));
 
-        String taskName = "Reverse Substrings Between Each Pair of Parentheses";
+        String taskName = "Maximum Nesting Depth of the Parentheses";
         System.out.println('b' - 'a');
         System.out.println(String.join("_", taskName.split("[ /-]")));
     }
