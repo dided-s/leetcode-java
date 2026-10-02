@@ -9,13 +9,13 @@ public class Utils {
 
     public static void main(String[] args) {
         String stringWithSquareBrackets = """
-                        [["a","yes"]]
+                        [["(","(","("],[")","(",")"],["(","(",")"],["(","(",")"]]
                         """;
         System.out.println(makeFigureBrackets(stringWithSquareBrackets));
 
         System.out.println(makeListOf(stringWithSquareBrackets));
 
-        String taskName = "Maximum Nesting Depth of the Parentheses";
+        String taskName = "Generate Parentheses";
         System.out.println('b' - 'a');
         System.out.println(String.join("_", taskName.split("[ /-]")));
     }
