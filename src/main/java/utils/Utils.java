@@ -15,7 +15,7 @@ public class Utils {
 
         System.out.println(makeListOf(stringWithSquareBrackets));
 
-        String taskName = "Generate Parentheses";
+        String taskName = "Remove Outermost Parentheses";
         System.out.println('b' - 'a');
         System.out.println(String.join("_", taskName.split("[ /-]")));
     }
