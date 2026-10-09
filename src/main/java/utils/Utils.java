@@ -15,7 +15,7 @@ public class Utils {
 
         System.out.println(makeListOf(stringWithSquareBrackets));
 
-        String taskName = "Remove Outermost Parentheses";
+        String taskName = "Minimum Insertions to Balance a Parentheses String";
         System.out.println('b' - 'a');
         System.out.println(String.join("_", taskName.split("[ /-]")));
     }
