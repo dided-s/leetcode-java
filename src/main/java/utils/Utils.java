@@ -9,19 +9,19 @@ public class Utils {
 
     public static void main(String[] args) {
         String stringWithSquareBrackets = """
-                        [["(","(","("],[")","(",")"],["(","(",")"],["(","(",")"]]
+                        [[0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0],[1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0],[0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,1,1,0,0,0,0,0],[0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],[0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0]]
                         """;
         System.out.println(makeFigureBrackets(stringWithSquareBrackets));
 
         System.out.println(makeListOf(stringWithSquareBrackets));
 
-        String taskName = "Minimum Insertions to Balance a Parentheses String";
+        String taskName = "Minimum Cost to Acquire Required Items";
         System.out.println('b' - 'a');
         System.out.println(String.join("_", taskName.split("[ /-]")));
     }
 
     public static String makeFigureBrackets(String stringWithSquareBrackets) {
-        return stringWithSquareBrackets.replaceAll("\\[", "{")
+        return stringWithSquareBrackets.replaceAll("\\[", "\n{")
                 .replaceAll("]", "}");
     }
 
